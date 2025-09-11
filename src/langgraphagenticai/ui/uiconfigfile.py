@@ -16,6 +16,14 @@ class Config:
     def get_groq_model_options(self):
        model_options = self.config["DEFAULT"].get("GROQ_MODEL_OPTIONS")
        return [opt.strip() for opt in model_options.split(",")] if model_options else []
+    
+    def get_openai_model_options(self):
+       model_options = self.config["DEFAULT"].get("OPENAI_MODEL_OPTIONS")
+       return [opt.strip() for opt in model_options.split(",")] if model_options else []
+    
+    def get_gemini_model_options(self):
+       model_options = self.config["DEFAULT"].get("GEMINI_MODEL_OPTIONS")
+       return [opt.strip() for opt in model_options.split(",")] if model_options else []
 
     def get_page_title(self):
         return self.config["DEFAULT"].get("PAGE_TITLE")
